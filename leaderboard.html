@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+
+<div class="logo" onclick="goHome()">🎓 RuralLearn</div>
+
+<div class="menu">
+
+<button class="home-btn" onclick="goHome()">Home</button>
+
+<div class="dots" onclick="toggleMenu()">⋮</div>
+
+<div id="dropdown" class="dropdown">
+<p onclick="goDashboard()">Dashboard</p>
+<p onclick="goLeaderboard()">Leaderboard</p>
+<p onclick="logout()">Logout</p>
+</div>
+
+</div>
+
+</div>
+
+<h1>Leaderboard</h1>
+
+<div id="board"></div>
+
+<script>
+
+let board="";
+
+for(let i=0;i<localStorage.length;i++){
+
+let key=localStorage.key(i);
+
+if(key.includes("_points")){
+
+let name=key.replace("_points","");
+let score=localStorage.getItem(key);
+
+board+=`<h3>${name} : ${score}</h3>`;
+}
+
+}
+
+document.getElementById("board").innerHTML=board;
+
+</script>
+
+</body>
+</html>

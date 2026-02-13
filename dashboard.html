@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+
+<div class="logo" onclick="goHome()">🎓 RuralLearn</div>
+
+<div class="menu">
+
+<button class="home-btn" onclick="goHome()">Home</button>
+
+<div class="dots" onclick="toggleMenu()">⋮</div>
+
+<div id="dropdown" class="dropdown">
+<p onclick="goDashboard()">Dashboard</p>
+<p onclick="goLeaderboard()">Leaderboard</p>
+<p onclick="logout()">Logout</p>
+</div>
+
+</div>
+
+</div>
+
+<h1>Welcome!</h1>
+
+<h2 id="points"></h2>
+
+<h2 id="level"></h2>
+
+<div class="progress-container">
+<div id="progressBar"></div>
+</div>
+
+<h2 id="badge"></h2>
+<h3 id="timer">Time Left: 10</h3>
+
+<a href="quiz.html">
+<button>Start Quiz</button>
+</a>
+
+<a href="leaderboard.html">
+<button>Leaderboard</button>
+</a>
+
+<script>
+
+let user=localStorage.getItem("loggedUser");
+
+let pts=localStorage.getItem(user+"_points") || 0;
+
+document.getElementById("points").innerText=
+"Your Points: "+pts;
+
+</script>
+
+</body>
+</html>

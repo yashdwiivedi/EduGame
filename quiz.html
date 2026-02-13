@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadQuestion()">
+    <div class="navbar">
+
+<div class="logo" onclick="goHome()">🎓 RuralLearn</div>
+
+<div class="menu">
+
+<button class="home-btn" onclick="goHome()">Home</button>
+
+<div class="dots" onclick="toggleMenu()">⋮</div>
+
+<div id="dropdown" class="dropdown">
+<p onclick="goDashboard()">Dashboard</p>
+<p onclick="goLeaderboard()">Leaderboard</p>
+<p onclick="logout()">Logout</p>
+</div>
+
+</div>
+
+</div>
+
+<h2 id="question"></h2>
+
+<div id="options"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

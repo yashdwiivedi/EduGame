@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+
+<div class="logo" onclick="goHome()">🎓 RuralLearn</div>
+
+<div class="menu">
+
+<button class="home-btn" onclick="goHome()">Home</button>
+
+<div class="dots" onclick="toggleMenu()">⋮</div>
+
+<div id="dropdown" class="dropdown">
+<p onclick="goDashboard()">Dashboard</p>
+<p onclick="goLeaderboard()">Leaderboard</p>
+<p onclick="logout()">Logout</p>
+</div>
+
+</div>
+
+</div>
+
+<h2>Login</h2>
+
+<input id="username" placeholder="Username"><br><br>
+<input id="password" type="password" placeholder="Password"><br><br>
+
+<button onclick="login()">Login</button>
+
+<script>
+
+function login(){
+
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+if(localStorage.getItem(user)===pass){
+
+localStorage.setItem("loggedUser",user);
+window.location.href="dashboard.html";
+
+}
+else{
+alert("Invalid Login");
+}
+
+}
+
+</script>
+
+</body>
+</html>
